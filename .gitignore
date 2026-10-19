@@ -1,0 +1,17 @@
+# GitHub Desktop не нужен — репозиторий обычный git.
+.DS_Store
+Thumbs.db
+
+# локальные данные и пароли никогда не попадают в репозиторий
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+*.key
+*.pem
+node_modules/
+
+# временные файлы сборки
+tmp/
+*.log

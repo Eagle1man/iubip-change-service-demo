@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо — сервис приёма изменений для сайта ИУБиП</title>
+<meta name="description" content="Интерактивное демо сервиса приёма изменений: вход, форма заявки, очередь согласования, готовый YAML-файл.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="demo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128203;</text></svg>">
+</head>
+<body class="demo-body">
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark" aria-hidden="true">&#128203;</span>
+      <span class="brand-text">
+        <strong>Демо сервиса</strong>
+        <small>данные вымышленные, работает без сервера</small>
+      </span>
+    </a>
+    <nav aria-label="Навигация демо">
+      <a href="#" id="nav-reset">Начать заново</a>
+      <a href="../">О сервисе</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap demo-main">
+
+  <aside class="demo-aside">
+    <h2>Что здесь происходит</h2>
+    <p id="stage-hint">Выберите роль и войдите.</p>
+    <ol class="stage-list" id="stage-list">
+      <li data-stage="login">Вход</li>
+      <li data-stage="form">Форма заявки</li>
+      <li data-stage="queue">Очередь согласования</li>
+      <li data-stage="yaml">Готовый файл</li>
+    </ol>
+    <div class="demo-facts">
+      <p><strong>Реальные Ф.И.О. не используются.</strong> Перечень и разделы — вымышленные.</p>
+    </div>
+  </aside>
+
+  <section class="demo-screen" id="screen">
+    <!-- Содержимое подставляет demo.js -->
+  </section>
+
+</main>
+
+<script src="demo-data.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

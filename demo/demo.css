@@ -1,0 +1,206 @@
+/* Стили интерактивного демо. */
+
+.demo-body { background: var(--bg-alt); }
+
+.demo-main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 26px;
+  align-items: start;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+/* --- боковая панель --- */
+
+.demo-aside {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 20px 22px;
+  position: sticky;
+  top: 84px;
+}
+.demo-aside h2 { font-size: 17px; margin: 0 0 10px; }
+.demo-aside > p { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+
+.stage-list { list-style: none; padding: 0; margin: 0 0 18px; counter-reset: step; }
+.stage-list li {
+  counter-increment: step;
+  padding: 8px 10px 8px 34px;
+  position: relative;
+  color: var(--muted);
+  font-size: 15px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+.stage-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 6px; top: 8px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--line);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stage-list li.is-active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.stage-list li.is-active::before { background: var(--accent); }
+
+.demo-facts { border-top: 1px solid var(--line); padding-top: 14px; }
+.demo-facts p { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* --- экран --- */
+
+.demo-screen { min-width: 0; }
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px 26px;
+}
+.panel h2 { margin-top: 0; }
+
+.muted { color: var(--muted); }
+.fineprint { color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+/* --- выбор роли --- */
+
+.role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+
+.role-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color .15s, box-shadow .15s;
+}
+.role-card:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(31,78,121,.12); }
+.role-label { font-weight: 700; color: var(--accent); font-size: 15px; }
+.role-fio { font-size: 15px; }
+.role-pos { font-size: 13px; color: var(--muted); }
+
+/* --- форма --- */
+
+fieldset { border: 1px solid var(--line); border-radius: 4px; margin: 0 0 18px; padding: 10px 16px 16px; }
+legend { font-weight: 700; padding: 0 8px; }
+
+.fld { display: block; margin: 12px 0; }
+.fld > span { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font: inherit;
+  font-size: 15px;
+  background: #fff;
+}
+input[readonly] { background: #eef1f4; color: #444; }
+select[disabled] { background: #eef1f4; color: #444; }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+
+.autofill { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.autofill label { margin: 10px 0; }
+.autofill span { display: block; font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+
+.lock-note { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+
+.error-box {
+  background: #fbe3e1;
+  border-left: 4px solid #b42318;
+  padding: 10px 14px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #b42318;
+}
+
+/* --- кнопки --- */
+
+.btn, .btn-small {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 3px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-small { padding: 6px 13px; font-size: 14px; margin-top: 8px; }
+.btn-ghost { background: #fff; color: var(--accent); }
+.btn-ok { background: var(--ok); border-color: var(--ok); }
+.btn-err { background: #b42318; border-color: #b42318; }
+.btn:hover { opacity: .92; }
+
+/* --- очередь --- */
+
+.req {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.req-head { font-size: 16px; margin-bottom: 10px; }
+.req-head strong { color: var(--accent); margin-right: 6px; }
+
+.req-meta {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 4px 12px;
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+.req-meta dt { color: var(--muted); }
+.req-meta dd { margin: 0; }
+
+.decision { border-top: 1px solid var(--line); padding-top: 12px; }
+.reject-row { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.reject-row select { width: auto; flex: 1; }
+
+/* --- YAML --- */
+
+.yaml {
+  background: #f6f8fa;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre;
+}
+.yaml-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+.note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--warn-soft);
+  border-left: 4px solid var(--warn);
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .demo-main { grid-template-columns: 1fr; }
+  .demo-aside { position: static; }
+  .role-grid, .row2, .autofill { grid-template-columns: 1fr; }
+  .req-meta { grid-template-columns: 1fr; }
+}
